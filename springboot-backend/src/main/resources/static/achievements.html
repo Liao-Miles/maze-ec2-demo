@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>成就系統</title>
+    <link rel="stylesheet" href="/assets/css/achievements.css" />
+</head>
+<body>
+
+<h2 class="left-title">成就列表</h2>
+
+<div class="sidebar">
+    <h3>玩家資訊</h3>
+    <div id="playerName">玩家：未登入</div>
+    <div id="playerAccount">帳號：未登入</div>
+    <div class="center-container">
+        <button class="menu-btn" data-sound="click" data-jump="index.html">回首頁</button>
+    </div>
+</div>
+
+<div class="achievement-area" id="achievementList">
+    <!-- 成就卡片由 JS 生成 -->
+</div>
+
+<script type="module">
+    import SoundManager from './assets/js/soundManager.js';
+    import './assets/js/achievement.js';
+
+    // 載入點擊音效
+    SoundManager.load('click', '/assets/audio/select-sound-fixed-extended.mp3', 0.8);
+    SoundManager.autoBind(280);
+
+</script>
+
+</body>
+</html>

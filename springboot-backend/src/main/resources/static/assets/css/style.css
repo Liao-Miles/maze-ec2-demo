@@ -1,0 +1,322 @@
+@font-face {
+  font-family: 'Cubic11';
+  src: url('../font_style/Cubic_11.woff2') format('woff2');
+  font-display: swap;
+}
+
+body {
+  font-family: 'Cubic11', 'Press Start 2P', monospace;
+  background-image: url('../images/index_bg2.png');
+}
+
+.grid1 {
+  display: grid;
+  grid-template-columns: repeat(25, 45px);
+ 
+  border: 35px solid transparent;
+  border-image-source: url('../images/rounded-background.png');
+  border-image-slice: 200 200 250 200 fill;
+  border-image-width: 45px;
+  border-image-repeat: stretch;
+  border-radius: 15px;
+  outline: 2px solid #fce38a;
+  outline-offset: -8px;
+  /* 貼齊邊框 */
+}
+
+.cell {
+  position: relative;
+  width: 45px;
+  height: 45px;
+}
+
+.game-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.setting {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 25px;
+  color: #fce38a;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* 黑半透明 */
+  border: 2px solid #fce38a;
+  border-radius: 8px;
+  width: 310px;
+  height: 730px;
+}
+
+.return-btn {
+  font-size: 25px;
+  background-color: rgba(0, 0, 0, 0.5);/* 黑底 */
+  color: #fce38a;                    /* 金色字 */
+  border: 2px solid #fce38a;         /* 金色邊框 */
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.return-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 5px 2px #fce38a;   /* 發光感 */
+}
+
+.path {
+  background-image: url('../images/cubblestone.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.end {
+  background-image: url('../images/cubblestone.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.end::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/door.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 15;
+}
+
+.end.dimmed::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 14;
+  /*  比 .end::after 小，才能蓋在背景上，但不遮門圖 */
+}
+
+.end::after {
+  animation: strongGlow 1.5s infinite alternate;
+}
+
+@keyframes strongGlow {
+  from {
+    filter: brightness(1) drop-shadow(0 0 6px rgba(255, 100, 100, 0));
+  }
+
+  to {
+    filter: brightness(1.2) drop-shadow(0 0 16px rgba(248, 3, 3, 0.558));
+  }
+}
+
+.dead {
+  background-image: url('../images/abyss2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.player{
+  position: relative;
+} 
+
+.player::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/fecSAcJ-unscreen.gif');
+  background-size: cover;
+   transform: scale(1.15);        
+  transform-origin: center; 
+
+}
+
+.house {
+  background-image: url('../images/cubblestone.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.house::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/house.png');
+  background-size: 180% 180%;
+  background-repeat: no-repeat;
+  background-position: center 42%;
+  z-index: 15;
+ animation: strongGlow 1.5s infinite alternate;
+}
+
+.dimmed {
+  position: relative;
+}
+
+/* .dimmed::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 15;
+}  */
+
+.diamond {
+  background-image: url('../images/cubblestone.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.diamond::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/diamond.gif');
+  background-size: 150% 150%;
+  background-repeat: no-repeat;
+  background-position: center 55%;
+  z-index: 15;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/hidden-black-image.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.95;
+  /* 控制遮罩強度 */
+  z-index: 10;
+}
+
+
+.cell:not(.dimmed) .overlay {
+  display: none;
+}
+
+
+.monster {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  z-index: 6;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+}
+
+
+.monster2 {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  z-index: 6;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+}
+
+.monster3 {
+  position: absolute;
+  width: 115%;
+  height: 115%;
+  top: -25%;
+  left: -2%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+  z-index: 6;
+}
+
+.result-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75); /* 遊戲結算後的背景遮罩 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.result-box {
+  background-color: rgba(0, 0, 0, 0.85);
+  border: 2px solid #fce38a;
+  border-radius: 12px;
+  padding: 20px 30px;
+  color: #fff7d6;
+  font-size: 20px;
+  box-shadow: 0 0 20px gold;
+}
+
+.result-box h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #ffe066;
+}
+
+.result-box button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ffe066;
+  border: none;
+  font-weight: bold;
+  font-family: inherit;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease; 
+}
+
+/*這是給結算畫面用的*/
+.hidden2 {
+  display: none;
+}
+
+.result-box button:hover {
+  transform: scale(1.1);      
+}
+
+.playerIdDisplay{
+  font-size: 30px;
+  color: #ffe066;
+  font-weight: bolder;
+}

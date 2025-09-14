@@ -1,0 +1,108 @@
+@font-face {
+  font-family: 'Cubic11';
+  src: url('../font_style/Cubic_11.woff2') format('woff2');
+  font-display: swap;
+}
+
+body {
+  font-family: 'Cubic11', 'Press Start 2P', monospace;
+  background-color: #2a2a24;
+  background-image: url('../images/index_bg2.png');
+  background-size: cover; /* 拉伸圖片鋪滿整個畫面 */
+  background-position: center; /* 圖片置中 */
+  background-repeat: no-repeat; /* 不重複 */
+  color: #fce38a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.menu-btn {
+  width: 200px; /* 統一按鈕寬度 */
+  padding: 15px 15px;
+  margin: 12px;
+  font-size: 36px;
+  background-color: #fce38a;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family:  'Cubic11','Press Start 2P', monospace;
+  transition: 0.2s;
+}
+
+.menu-btn:hover {
+  background-color: #ffdf5e;
+  transform: scale(1.05);
+}
+
+#authButton {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 200px; /* 與其他按鈕一致 */
+}
+
+h1 {
+  font-size: 80px;
+  text-shadow: 2px 2px 0 #000;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 60px;
+  text-shadow: 2px 2px 0 #000;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+h4{
+  font-size: 30px;
+  margin-bottom: 10px;
+
+}
+
+.container {
+  display: flex;
+  gap: 100px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.left, .right {
+  flex: 1 1 300px; /* 左右最小寬度 400px */
+  padding: 25px;
+  box-sizing: border-box;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.7);
+}
+
+h3 {
+  margin-top: 0;
+  color: #fce38a;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin: 15px;
+  font-size: 15px;
+}
+
+/* 玩家資訊框 */
+.player-info {
+  margin-bottom: 50px;
+  font-size: 24px;
+}
+.hidden {
+  display: none;
+}
