@@ -1,4 +1,4 @@
-USE railway;
+USE maze_db;
 -- 成就 1
 insert into achievement (name, description, condition_type, condition_value, points)
 values (

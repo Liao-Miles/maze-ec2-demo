@@ -1,5 +1,5 @@
 -- auto-generated definition
-USE railway;
+USE maze_db;
 
 create table player
 (
