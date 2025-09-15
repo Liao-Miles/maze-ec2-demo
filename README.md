@@ -1,6 +1,6 @@
 # 🏰 迷宮冒險（Maze Adventure） 
 
-## [遊戲連結](https://mazegame-railway-production.up.railway.app/index.html) (此專案部署於 Railway 免費方案，首次加載可能需等待)
+## [遊戲連結](https://maze.liaomiles.com)
  
 ## 🌟 專案簡介  
 這是一款完整的 **迷宮冒險遊戲專案**，由 **前端 JavaScript 遊戲** 與 **後端 Spring Boot 登錄/排行榜/成就系統** 組成。  
@@ -43,7 +43,7 @@
 - **後端**：Spring Boot (帳號註冊、登入、排行榜、成就管理)  
 - **資料庫**：MySQL (存儲玩家帳號、密碼、成就與分數)  
 - **前端呈現**：HTML/CSS Grid
-- **部署**：Railway (自動化部署與雲端運行)
+- **部署**：AWS EC2 + Nginx + Certbot (Let's Encrypt)
 
 ---
 ## 🌳 專案結構樹狀圖
