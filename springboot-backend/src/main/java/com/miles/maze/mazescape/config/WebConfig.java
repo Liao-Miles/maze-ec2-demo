@@ -11,13 +11,18 @@ public class WebConfig {
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
             @Override
-            public void addCorsMappings(CorsRegistry registry
-            ) {
+            public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:8080","http://54.248.195.184:8080")
-                        .allowedMethods("GET","POST","PUT","DELETE")
+                        .allowedOrigins(
+                                "http://localhost:8080",
+                                "http://54.248.195.184:8080",
+                                "http://maze.liaomiles.com",
+                                "https://maze.liaomiles.com"
+                        )
+                        .allowedMethods("GET", "POST", "PUT", "DELETE")
                         .allowCredentials(true);
             }
         };
     }
 }
+
