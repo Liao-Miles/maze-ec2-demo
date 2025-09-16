@@ -2,7 +2,7 @@
     import {player, handlePlayerMove, lightuse,diamondCount} from './player.js'
     import {isReachableWithinSteps,monster,monster2,monster3} from "./monster.js"
     import SoundManager from "./soundManager.js";
-    import {authFetch} from "./auth";
+    import {authFetch} from "./auth.js";
     
     //(同源部屬可以不用，暫時註解)
     // const API_BASE = 'http://localhost:8080';
@@ -286,7 +286,7 @@
                 }
     
                 if (clearedMaps.length >= mapCount) achievements.push('活著真好');
-    
+
                 // 新增「全靠自己」隱藏成就：未進安全屋、未使用提燈
                 if (triggeredHouses.size === 0 && lightuse === 10) achievements.push('全靠自己');
     
