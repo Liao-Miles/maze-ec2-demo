@@ -312,9 +312,6 @@ function winGame() {
                     .catch(err => console.error(`解鎖 ${name} 成就出錯:`, err));
             });
 
-
-            // 顯示成就列表
-            displayAchievements(playerId);
         }
 
     }, 300);
